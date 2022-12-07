@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
+
+  
+  body {
+    color: white;
+    background: #000;
+  
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+  
+    /*width: 480px;
+    height: 320px;*/
+    /* border: 1px solid white;  */
+    margin: auto;
+    padding: 0;
+  }
+  .btn {
+    margin: 2rem;
+  }
+  
+  .Digits {
+    font-family: "Digital", monospace;
+    font-size: 900%;
+    line-height: 1em;
+    margin: 40px 0;
+    position: relative;
+    z-index: 3;
+  }
+
+  .btn {
+    cursor: pointer;
+  }
+  
+  
