@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./home.css";
-const Home = ({user}) => {
+const Home = () => {
   const [date, setDate] = useState(new Date());
   const navigate = useNavigate();
 
+  const user = localStorage.getItem("user");
   const handleClickLogin = ()=> {
     navigate('/login');
   }

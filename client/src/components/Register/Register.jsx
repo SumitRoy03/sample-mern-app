@@ -1,8 +1,9 @@
 import "./register.css";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import server_api  from "../../server_api";
+
 const Register = () => {
   const [successMsg, setSuccessMsg] = useState("");
   const {
@@ -15,7 +16,7 @@ const Register = () => {
   const onSubmit = async (data) => {
     try {
       // console.log(data);
-      const res = await axios.post("/register", data);
+      const res = await server_api.post('/register',data);
       if (res) {
         // console.log(res);
         setSuccessMsg("User registration is successful ✔");

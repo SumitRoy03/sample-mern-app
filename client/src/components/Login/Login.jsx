@@ -1,11 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import "./login.css";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import server_api  from "../../server_api";
 
-
-const Login = ({user,setUser,setErrCode}) => {
+const Login = ({setErrCode}) => {
   const {
     register,
     handleSubmit,
@@ -18,7 +17,7 @@ const Login = ({user,setUser,setErrCode}) => {
   const onSubmit = async(data) => {
     try {
       // console.log(data);
-      const res = await axios.post("/login", data);
+      const res = await server_api.post('/login',data);
       if (res && res.data.username === "404") {
         // console.log(res);
         reset();
@@ -34,7 +33,7 @@ const Login = ({user,setUser,setErrCode}) => {
       else if(res) {
         // console.log(res);
         reset();
-        setUser(res.data.username);
+        localStorage.setItem("user",res.data.username);
         navigate('/');  
       }
     } catch (err) {
